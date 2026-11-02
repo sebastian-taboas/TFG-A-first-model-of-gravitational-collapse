@@ -1,9 +1,0 @@
-[0] Config.pm:329> INFO - This is Biber 2.22
-[1] Config.pm:332> INFO - Logfile is 'doc_proba.blg'
-[252] biber-MSWIN64:342> INFO - === 
-[314] Biber.pm:421> INFO - Reading 'doc_proba.bcf'
-[531] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
-[567] bbl.pm:676> INFO - Writing 'doc_proba.bbl' with encoding 'UTF-8'
-[568] bbl.pm:779> INFO - Output to doc_proba.bbl
-[569] Biber.pm:132> WARN - The file 'doc_proba.bcf' does not contain any citations!
-[569] Biber.pm:134> INFO - WARNINGS: 1
