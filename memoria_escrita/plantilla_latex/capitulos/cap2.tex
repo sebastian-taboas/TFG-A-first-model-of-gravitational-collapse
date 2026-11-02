@@ -1,0 +1,63 @@
+\section{Algunhas Preguntas Frecuentes}
+
+Neste cap\'{\i}tulo inclu\'{\i}mos algunha subsecci\'on, ecuaci\'on, figura e t\'aboa, e de paso respostamos a algunha pregunta frecuente.
+
+
+\subsection{?`Qu\'e contabiliza para o n\'umero m\'aximo de p\'axinas l\'{\i}mite (25  m\'aximo para TFG e 40 para TFM)?}\label{quecontabiliza}
+ S\'{\i} contabilizan o \'{\i}ndice, a introducci\'on e resto de cap\'{\i}tulos, a bibliograf\'{\i}a, conclusi\'ons, figuras e t\'aboas, as\'{\i} como calqueira ap\'endice ou listado de c\'odigo inform\'atico. \'E dicir, b\'asicamente dende o \'{\i}ndice (inclu\'{\i}do) ata o final excepto as contraportadas internas e externas.
+Non contabilizan a portada externa nin interna, as declaraci\'ons de orixinalidade e autorizaci\'on de difusi\'on asinadas, nin os  res\'umenes, nin as contraportadas internas e/ou externas meramente protectoras ou con informaci\'on de peche.
+
+\subsection{?`C\'omo introduzo acentos, etc.?}
+Vai \'as primeiras li\~nas de c\'odigo do ficheiro principal ({\tt tfg.tex}) e ver\'as c\'omo empregar os acentos ``normais'' para varios sistemas operativos. Alternativamente, nos nosos textos de exemplo ver\'as c\'omo escribir en ASCII simple, independente do sistema operativo, tanto acentos coma outros caracteres como por exemplo \~n, \"u, !`, ?`, \%, @, hbar. En internet hai moita informaci\'on (busca latex keyboard layouts, latex symbols, etc.).
+
+\subsection{?`C\'omo fago unha ecuaci\'on?}
+No medio do texto ser\'{\i}a $\lambda=2\pi/\hbar$. Nunha li\~na propia ser\'{\i}a  (mira no c\'odigo aqu\'{\i}): 
+% 
+\begin{equation}
+\lambda=\frac{2\pi}{\hbar}.
+\label{eq-lambda}
+%\nonumber se non queremos numero de ecuacion (non se recomenda)
+\end{equation}
+% se deixas un renglon en blanco no codigo comezas un parrafo novo. Para evitalo podes usar un renglon cun caracter de comentario %
+Ou incluso
+%
+\begin{subequations}\label{todaaecuacion}%este entorno permite numerar ecuacions como 2a, 2b etc. O label e opcional para se queres chamar logo a ecuacion
+\begin{align}%este entorno sirve para que os signos igual esten ordeados
+\lambda_1&=\frac{2\pi}{\hbar},\\
+\lambda_2&=\frac{4\pi}{\hbar}+\int_{-\infty}^0{\rm d}x \sqrt{\sum_i\omega(x)}.\label{partedaecuacion}
+\end{align}
+\end{subequations}
+%
+
+\subsection{?`C\'omo referencio a unha secci\'on, ecuaci\'on, referencia bibliogr\'afica, etc.?}
+Tes que deixar nomeadas as {\tt label} ou etiquetas no obxecto que queres referir, e logo podes chamalas (mira o c\'odigo desta li\~na para ver a sintaxe; mira tam\'en o c\'odigo no obxecto referido) as\'{\i}: ``A secci\'on~\ref{quecontabiliza}''. ``As ecuaci\'ons{\ref{eq-lambda}, \ref{todaaecuacion} ou~\ref{partedaecuacion}''. ``O cadro~\ref{taboa1}''. ``a figura~\ref{figura-exemplo}''. En varias implentaci\'ons de \LaTeX\ tes que compilar d\'uas veces o documento cada vez que cambias unha referencia.
+
+%As referencias bibliogr\'aficas def\'{\i}nense en {\tt bibliografia.tex} como ``bibitems'', que definen unha etiqueta ao que chamar no texto, como facemos nesta frase.\cite{patricia} Tam\'en poden ser notas textuais.\cite{nota}
+
+\subsection{T\'aboas, cadros, etc.}
+As t\'aboas computan para o l\'{\i}mite m\'aximo de p\'axinas da memoria. Un exemplo \'e o cadro~\ref{taboa1}.
+%
+\begin{table}[htdp]
+\begin{center}\begin{tabular}{|c|c|r|}
+\hline
+mostra & masa ($\mu$g) & cor\\
+\hline 
+mostra 1 & 0.2 & vermella\\
+mostra 2 & 0.1 & azul\\
+\hline
+\end{tabular}\end{center}
+\caption{\sl Exemplo de cadro. Neste campo de  {\tt caption} tam\'en inclu\'{\i}mos un tipo de letra diferente, o cal \'e opcional. No pre\'ambulo do ficheiro  {\tt tfg.pdf} hai comentada algunha li\~na con opci\'ons m\'ais potentes, como cambiar o tama\~no de letra nas captions.}\label{taboa1}
+\end{table}
+%
+
+\subsection{Figuras}
+As figuras tam\'en computan para o l\'{\i}mite m\'aximo de p\'axinas. Existen varias formas de inclu\'{\i}r ficheiros de figuras, que podes buscar en internet. Podes  xerar a figura en calqueira programa, imprimila cunha impresora virtual a~.pdf ou outro formato, e chamar no c\'odigo \LaTeX\ ao ficheiro como aqu\'{\i} facemos por exemplo co logo da USC. Respecto a tama\~nos, cuida que o caracter m\'ais pequeno (inclu\'{\i}ndo sub\'{\i}ndices etc.) non te\~na menos altura base (tama\~no dun x) que 2~mm unha vez reducido ao seu tama\~no  no documento final.
+%
+\begin{figure}[htbp]
+\begin{center}
+  \includegraphics[width=0.2\linewidth]{USC.png}
+  \mbox{}\hskip1cm\mbox{}
+  \includegraphics[width=0.2\linewidth]{USC.png}
+\caption{Aqu\'{\i} incrustamos d\'uas figuras pero obviamente pode ser s\'o unha, ou m\'ais de d\'uas, regulando os {\tt width} do c\'odigo. Se son varias, recom\'endase etiquetalas como a), b), etc., no propio ficheiro gr\'afico (o noso logo de ejemplo no o fai, claro) e explicar cada unha neste campo {\tt caption}: A subfigura a) amosa blabla.... A subfigura b) amosa bleble. }\label{figura-exemplo}
+\end{center}
+\end{figure}}

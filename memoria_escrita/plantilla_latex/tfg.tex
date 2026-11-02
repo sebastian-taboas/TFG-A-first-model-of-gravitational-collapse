@@ -1,0 +1,93 @@
+%
+%  GALLEGO USAR (LINEA 10)
+%  CASTELLANO USAR (LINEA 11)
+%  ENGLISH USE (LINE 12)
+%
+%  MAC (LINEA 13)
+%  WINDOWS & LINUX (LINEA 14)
+
+\documentclass[12 pt, a4paper,twoside]{article} %E aceptable tamen 11pt
+\usepackage[galician]{babel}\decimalpoint  %Para Galego
+%\usepackage[spanish]{babel}\decimalpoint   %Para Castelan
+%\usepackage[english]{babel}\decimalpoint    %Para Ingles
+\usepackage[latin1]{inputenc} %acentos e caracteres para Mac
+%\usepackage[utf8]{inputenc} %acentos e caracteres para Windows & Linux
+%ou en vez dos dous renglons de arriba tamen pode usarse ASCII puro e buscar Keyboard Layouts en internet
+\usepackage[T1]{fontenc}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{hhline}
+\usepackage{amsmath, amsfonts, latexsym, color, textcomp, anysize}
+\usepackage[rightcaption]{sidecap}
+\usepackage{url}
+\usepackage{tablefootnote}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+\usepackage{scrextend}
+\addtokomafont{labelinglabel}{\sffamily}
+\usepackage{caption}% descomentar de querer texto mais pequeno nas captions de figura e taboas
+%\captionsetup{font=footnotesize} % descomentar de querer texto mais pequeno nas captions de figura e taboas. Existen mais opcions en internet.
+% \usepackage{subcaption} % eu (sebas) uso sempre este paquete para as figuras e tal, sen meter o caption normal
+\usepackage{subfigure}
+\parindent=5mm %sangr�a
+\parskip=3mm   %separacion entre parrafos
+\usepackage{gensymb}
+\usepackage{wrapfig}
+%\usepackage{natbib}
+\usepackage[hidelinks, pdftex]{hyperref}
+
+
+\definecolor{usc}{RGB}{15,41,118}
+\definecolor{grise}{RGB}{234, 236, 240}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+
+
+\begin{document}
+\pagenumbering{Roman}
+\include{capitulos/titulo}
+\include{capitulos/declaracions}
+
+%%%%%%%%%%%% En caso de querer incluir unha paxina en branco despois da portada
+%\thispagestyle{empty}
+%\newpage
+%$\ $
+%\newpage
+\clearpage
+\include{capitulos/resumo} % paxina de resumo e agradecementos. D�bese ter en conta o idioma seleccionado para o documento
+
+\clearpage
+\pagestyle{fancy}
+\fancypagestyle{plain}
+\lhead{}
+\chead{}
+\rhead{}
+\renewcommand{\headrulewidth}{0.1pt}
+\lfoot{} 
+\cfoot{\thepage}
+\rfoot{} 
+\renewcommand{\footrulewidth}{0pt}
+
+\pagenumbering{arabic}\setcounter{page}{1}
+\tableofcontents
+\clearpage
+
+%%%%%%% Incluimos as secci�ns que sexan necesarias
+\include{capitulos/introducion} 
+\clearpage
+\include{capitulos/cap2}
+\clearpage
+\include{capitulos/cap3}
+\cleardoublepage %cleardoublepage pode meter paxinas en branco. Non e obrigatorio. Tampouco para a biliografia, ver abaixo. Se en cambio queres que non haxa cambios de paxina antes dunha seccion, mete os ficheiros con \input{filename} en vez de con \include (poderia precisar a ruta e a extension do ficheiro)
+\include{capitulos/cap4}
+\cleardoublepage
+\include{capitulos/conclusions}
+
+
+%%%%%%%Bibliograf�a
+\appendix
+\cleardoublepage
+\include{capitulos/bibliografia}
+
+\end{document}
