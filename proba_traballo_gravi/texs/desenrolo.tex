@@ -1,0 +1,389 @@
+\section{Introdución}
+% Relatividade en 4D (acción EH?). Necesidade de D>4. Limitación EH en D>4. Necesidade do teorema de Lovelock. Contexto moderno: gravidade en altas dimensións, \textbf{supergravidade} e teorías gauge.
+
+%Un dos principais problemas históricos da ciencia é a creación dunha \textit{teoría do todo}, hoxe en día a maior traba para a realización deste soño é a cuantificación da interacción gravitacional. A vía que se atopou como natural consiste en converter a relatividade xeral de Einstein nunha teoría gauge de Yang-Mills vía renormalización, tras máis de 70 anos de traballo científico atopouse que isto é imposible para unha teoría gravitacional en $3+1$ dimensións, aínda que si para o caso de $2+1$ dimensións \cite{2+1grav0,2+1grav1}. Semella que o camiño a seguir é crear novas teorías de gravidade de dimensións maiores a $3+1$ (teorías de supergravidade?) o camiño abriuno David Lovelock no seu traballo de 1971 \cite{Lovelock-1971} que baixo o teorema que leva o seu nome permite elaborar certos tipos de accións (accións de Chern-Simons?) para gravidade a altas dimensións.
+
+%O noso punto de partida será a formulación orixinal de Einstein de 1915 coa acción de Einstein-Hilbert que xeneralizaremos á teoría de Cartan, probaremos que acaba conducindo a unha formulación semellante. A relatividade xeral queda reducida a unha teoría efectiva. principio de equivalencia de Einstein
+
+Un dos principais problemas históricos da ciencia é a creación dunha \textit{teoría do todo}. Neste contexto, a gravidade presenta dificultades especiais, xa que a súa descrición clásica mediante a Relatividade Xeral de Einstein non se integra de forma natural no marco das teorías cuánticas de campos. En particular, os intentos de tratar a gravidade como unha teoría gauge análoga ás teorías de Yang–Mills conducen a problemas de non renormalizabilidade en $3+1$ dimensións, incluso se proba que é imposible, aínda que para o caso de $2+1$ dimensións \cite{2+1grav0,2+1grav1} si que é posible.
+
+Semella que o camiño a seguir é crear novas teorías de gravidade de dimensións superiores. Así, David Lovelock, no seu traballo de 1971 \cite{Lovelock-1971} proporciona un resultado fundamental baixo o teorema que leva o seu nome que permite elaborar formas máis xerais da acción gravitacional
+\begin{align}
+    \mathcal{S}_{EH}=\int \dd^D x \sqrt{\abs g} \frac{1}{2\kappa}R \hspace{1.5em} \text{onde} \hspace{1em} \kappa=8\pi G.
+\end{align}
+O noso punto de partida será a formulación orixinal de Einstein de 1915 coa acción de Einstein-Hilbert (1) que xeneralizaremos á teoría de Cartan, ademais de amosar outras vías, até introducir naturalmente as teorías de Lovelock, entendidas como extensións consistentes da gravidade en dimensións arbitrarias.
+
+\section{Teoría de variedades}
+Antes de poder describir as teorías de Lovelock debemos construír unha adecuada estrutura matemática na que fundamentar a nosa teoría. O primeiro paso será destripar a nosa mesa de traballo que chamamos espazotempo, diremos que o espazotempo é unha $\mathcal{M}$ \textit{variedade pseudoriemanniana afinmente conectada}. Daremos por coñecidos as nocións fundamentais e a álxebra de tensores, tales como cambios de índice, vectores co- e contravariantes como tamén os cambios xenerais de coordenadas (CXC), trataremos todo nesta sección do xeito máis breve e cualitativo posible.
+
+\subsection{Variedades diferenciais}
+O nivel de estrutura máis baixo dende o que podemos estender a noción de variedade até que inclúa todos os anteriores palabros é a variedade topolóxica que é un tipo de estrutura alxébirca ao que se lle asocia un homeomorfismo \cite{masa-2020}
+\begin{adjustwidth}{1cm}{0.8cm}\vspace{0.4em}
+    \textit{Sexan $\mathcal{M},\mathcal{N}\subset\mathbb{R}^p,\mathbb{R}^q$ dous espazos. Diremos que unha aplicación continua e con inversa continua $h:\mathcal{M}\longrightarrow\mathcal{N}$ é un \textbf{homemorfismos}. Se existe $h$ diremos que $\mathcal{M}$ e $\mathcal{N}$ son homeomorfos, $\mathcal{M}\approx\mathcal{N}$.}\vspace{0.4em}
+\end{adjustwidth}
+No entanto, na física, é moito máis interesante estudar un tipo concreto de variedades topolóxicas sobre a que si podemos realizar ``cálculos'': as variedades diferenciais; estas caracterízanse por ter asociado un difeomorfismo, que non é máis ca unha restrición da existencia de derivadas sobre os homeomofismo e a inversa. Dicimos que aquelas propiedades que se conservan baixo un homeomorfismo son propiedades topolóxicas, as que se conserven baixo os difeomorfismo diremos que son xeométricas. Entre estas propiedades destacamos a metricidade e a conexidade.
+
+\subsubsection{Metricidade}
+A métrica $g\indices{_\mu_\nu}$ é o obxecto que nos permite medir distancias dentro da nosa variedade, trátase dun campo tensorial simétrico e non dexenerado. Dicimos que unha \textit{variedade diferencial é de Riemann} cando esta presenta unha estrutura de métrica definida positiva, denotámolo por ($\mathcal{M},\textbf{g}$). Nós utilizamos un tipo algo máis xeral de variedade, aquelas denominadas \textit{pseudoriemannianas}, estas son aquelas cuxa métrica non é necesariamente definida positiva. Logo, para unha variedade desta clase definimos a signatura da métrica como a tupla ($p,q$) onde $p$ representa a cantidade de autovalores de valor $-1$ e $q$ a de $+1$. Notemos que a propiedade de simetría permite sempre diagonalizar a métrica, o que quere dicir que podemos construír unha forma canónica, para o primeiro caso teríamos unha métrica canónica euclídea $\delta\indices{_\mu_\nu}$ e para o segundo unha métrica canónica de Minkowski $\eta\indices{_\mu_\nu}$ de signatura ($p,q$).
+
+A métrica permítenos definir tamén o produto interno entre vectores que á vez permítenos medir a norma destes. No caso dunha variedade pseudoriemanniana dicimos que esta norma non ten signo definido e segundo se é negativa, nula ou positiva, dicimos que é o vector é \textit{time-like}, \textit{light-like} ou \textit{space-like}, respectivamente.
+
+\subsubsection{Afinidade}
+Se ben poderíase pensar que a métrica é suficiente para estudar a xeometría da variedade por extensión euclidiana, o certo é que atopamos que aquelas variedades máis xenerais ``conectan'' os seus puntos de xeitos non moi intuitivos. Unha variedade afinmente conectada é aquela que presenta unha conexión $\Gamma$ (o que nos di ``como se conecta'' o espazo) e denotámola como ($\mathcal{M},\Gamma$). Isto vese reflectido cando pretendemos transportar un vector dun punto a outro da variedade\footnote{Isto vese explicitamente na derivada covariante, revísese \cite{notasclase,doCarmo,lovelock-1989}. Constatar só que para poder definir correctamente unha derivada covariante a conexión é imprescindible.}, onde as propiedades só se conservan na translación se a estrutura é afín; i.e. transporte autoparalelo, que nos dá unha noción de ``recto'' no sentido de un vector mantéñase paralelo a si mesmo ao longo do transporte.
+
+\subsection{Xeodésicas sobre unha variedade}
+A priori, a conexión e a métrica son obxectos que nada di un do outro e en consecuencia poderíamos pensar en dous tipos de traxectorias óptimas distintas sobre a variedade: unha que sexa a máis corta en canto a métrica e outra que sexa a máis recta en canto o transporte é autoparalelo. A primeira clase é a traxectoria tipicamente física que supón unha curva crítica para unha acción, como é o caso da $\mathcal{S}_{EH}$, estas curvas dependen dun obxecto denominado \textit{símbolos de Christoffel} $\{ \indices{^\mu_\alpha_\beta}\}$ e rexidas pola ecuación da xeodésica métrica (2). O segundo tipo, que denominamos xeodésica afín (3), depende da conexión e define a traxectoria máis recta ou autoparalela para un vector. 
+\begin{align}
+    \ddot{x}\indices{^\mu} + \{ \indices{^\mu_\alpha_\beta}\}\dot{x}\indices{^\alpha}\dot{x}\indices{^\beta} = 0\\
+    \ddot{x}\indices{^\mu} + \Gamma\indices{^\mu_\alpha_\beta}\dot{x}\indices{^\alpha}\dot{x}\indices{^\beta} = 0
+\end{align}
+Os símbolos de Christoffel veñen completamente determinados pola métrica como se indica en (4). Isto é así porque a métrica é a única que media en xeral na definición dunha densidade lagranxiana, utilizando Euler-Lagrange chegaríamos a
+\begin{align}
+    \{ \indices{^\mu_\alpha_\beta}\} \equiv \levicivita
+\end{align}
+
+\subsection{Curvatura e torsión}
+A partir da conexión, e unicamente desta, podemos construír dous tensores que miden dun modo moito máis directo ou intuitivo o comportamento xeométrico da variedade e que nos permitirá distinguir entre distintos espazotempos. Nun primeiro lugar construímos o tensor de torsión $T\indices{^\sigma_\mu_\nu}$ que cuantifica como rotan os vectores ao longo do transporte, digamos que mide o ``antiparalelismo''\footnote{A interpretación máis usual é algo como ``\textit{mide en que medida falla o peche do paralelogramo que formaría o transporte de dous vectores entre eles''}.}. É a parte antisimétrica da conexión
+\begin{align}
+    T\indices{^\sigma_\mu_\nu} = \Gamma\indices{^\sigma_\mu_\nu} - \Gamma\indices{^\sigma_\nu_\mu},
+\end{align}
+notemos que a torsión é nula se a conexión é simétrica nos índices inferiores, se a variedade non ten torsión dise libre de torsión.
+Pola contra, o tensor de Riemann $R\indices{^\mu_\nu_\alpha_\beta}$ contén toda a información sobre a curvatura xeométrica da variedade
+\begin{align}
+    R\indices{^\mu_\nu_\alpha_\beta} = \riemann ,
+\end{align}
+se todas as compoñentes son nulas dise que a variedade é plana e deberímos ter un espazo difeomorfo ao de Minkowski. Ademais este tensor pode ter tres contraccións independentes posibles moi importantes
+\begin{align}
+    R\indices{^{(1)}_\mu_\nu}&:= R\indices{^\sigma_\mu_\sigma_\nu} = \partial_\sigma \Gamma\indices{^\sigma_\mu_\nu} - \partial_\nu \Gamma\indices{^\sigma_\mu_\sigma} + \Gamma\indices{^\sigma_\lambda_\sigma}\Gamma\indices{^\lambda_\mu_\nu} - \Gamma\indices{^\sigma_\lambda_\nu}\Gamma\indices{^\lambda_\mu_\sigma}\\
+    R\indices{^{(2)}_\mu_\nu}&:= R\indices{_\mu^\sigma_\sigma_\nu} = g\indices{_\rho_\mu}g\indices{^\sigma^\varsigma}\left( \partial_\sigma \Gamma\indices{^\rho_\varsigma_\nu} - \partial_\nu \Gamma\indices{^\rho_\varsigma_\sigma} + \Gamma\indices{^\rho_\lambda_\sigma}\Gamma\indices{^\lambda_\varsigma_\nu} - \Gamma\indices{^\rho_\lambda_\nu}\Gamma\indices{^\lambda_\varsigma_\sigma} \right)\\
+    R\indices{^{(3)}_\mu_\nu}&:= R\indices{^\sigma_\sigma_\mu_\nu} = \partial_\mu \Gamma\indices{^\sigma_\nu_\sigma} - \partial_\nu \Gamma\indices{^\sigma_\mu_\sigma} 
+\end{align}
+que coa métrica (notemos que para $R\indices{^{(2)}_\mu_\nu}$ xa foi preciso empregala) podemos calcular a traza destes tensores
+\begin{align}
+    R\equiv R^{(1)} = -R^{(2)}\hspace{2em} \text{e} \hspace{2em} R^{(3)} = 0.
+\end{align}
+Só un destes escalares é non trivial, é o denominado \textit{escalar de curvatura} que constrúe o tensor de Einstein e aparece na acción de (1), por outro lado o tensor $R\indices{^{(1)}_\mu_\nu}$ é un tanto especial e denominámolo tensor de Ricci.
+
+\subsection{Teoría de Riemann-Cartan}
+Coas primeiras definicións xa introducimos o que é unha variedade pseudoriemanniana afinmente conectada ($\mathcal{M},g,\Gamma$), como esixe o noso espazotempo. No entanto, imos restrinxir un pouco máis a nosa variedade para conseguir unha contracción de Riemann única e non haxa ambigüidade na definición de curvatura. Até agora nada dixemos sobre a relación entre métrica e conexión, no entanto, podemos avaliar a compatibilidade da métrica mediante o tensor de metricidade\footnote{Este tensor defínese mediante a derivada covariante da métrica, fagamos unha pequena aclaración sobre notación. En xeral referirémonos a esta cun ``$;\mu$'' cando non lle esixamos ningunha clase de restrición (conexión arbitraria), no entanto, para unha conexión concreta usaremos $\nabla_\mu$ cun acento que represente á conexión precisa, por exemplo $\breve\nabla_\mu$ para Levi-Civita.}
+\begin{align}
+    Q\indices{_\lambda_\mu_\nu} = -g\indices{_\mu_\nu_{;\lambda}},
+\end{align}
+se este anúlase dicimos que a conexión é compatible coa métrica; se escollemos unha conexión baixo a que a variedade satisfaga esta condición dicimos que estamos ante unha teoría de Riemann-Cartan. Neste caso recuperamos as propiedades alxébricas (simetrías) típicas do tensor de Riemann e é inmediato que a única contracción posible é o tensor de Ricci. A verdadeira razón de esixirlle ao noso espazotempo que sexa unha teoría de Riemann-Cartan é que a compatibilidade coa métrica converte ao transporte paralelo ao longo dunha traxectoria nunha isometría, i.e., o produto escalar, logo, tamén a norma dun vector, é invariante ao longo da curva; este resultado é coñecido como \textit{Lema de Ricci} \cite{lovelock-1989}. Esta é unha propiedade necesaria, pois non sería fisicamente admisible que un vector tipo luz convértase nun vector doutra clase segundo o punto onde se atope: non teríamos correspondencia fenomenolóxica. 
+
+\paragraph{Teorema fundamental da xeometría riemanniana}
+\begin{adjustwidth}{1cm}{0.8cm}
+    \textit{Sexa unha variedade ($\mathcal{M},g,\Gamma$) existe unha única conexión que é compatible coa métrica e simétrica que denominamos \textit{conexión de Levi-Civita}, $\breve\Gamma$.} \cite{doCarmo}\vspace{0.4em}
+\end{adjustwidth}
+
+
+Esta conexión é moi especial, non é só que sexa un bo candidato como conexión para un espazotempo, senón que ademais é a única posible cuxa variedade é libre de torsión (por ser simétrica), ademais a súa expresión analítica é 
+\begin{align}
+      \breve\Gamma\indices{^\mu_\alpha_\beta}= \levicivita \equiv \{ \indices{^\mu_\alpha_\beta}\},
+\end{align}
+os símbolos de Christoffel coinciden coa conexión de Levi-Civita! O que se traduce que as traxectorias críticas (2) e autoparalelas (3) son as mesmas. Veremos na sección 4.2 que esta non é a única conexión que verifica que as xeodésicas coincidan, no entanto si que simplifican moito os cálculos. Tamén se pode demostrar que na teoría de Riemann-Cartan unha conexión calquera pode ser expresada como
+\begin{align}
+    \Gamma\indices{^\mu_\alpha_\beta} &= \breve\Gamma\indices{^\mu_\alpha_\beta} + K\indices{^\mu_\alpha_\beta} + L\indices{^\mu_\alpha_\beta}\\
+    \nonumber K\indices{^\mu_\alpha_\beta} &= \frac{1}{2}g\indices{^\mu^\sigma}\left(T\indices{_\sigma_\alpha_\beta} + T \indices{_\nu_\sigma_\beta} - T\indices{_\alpha_\beta_\sigma}\right)\\
+    \nonumber L\indices{^\mu_\alpha_\beta} &= \frac{1}{2}g\indices{^\mu^\sigma}\left(Q\indices{_\sigma_\alpha_\beta} + Q \indices{_\nu_\sigma_\beta} - Q\indices{_\alpha_\beta_\sigma}\right)
+\end{align}
+onde $K\indices{^\mu_\alpha_\beta}$ é o tensor de contorsión. A conexión depende só da torsión e da metricidade, evidenciando o teorema anterior.
+
+\section{Formas diferenciais e xeometría exterior}
+Entre 1929 e 1932 Einstein e Cartan sostiveron un debate por correspondencia postal \cite{CH_supergravities} pola veracidade da conexión de Levi-Civita como a lexítima da relatividade xeral. Efectivamente esta satisfai as condicións para que a nosa teoría sexa física e ademais é especialmente doada para reproducir cálculos (este é o que poderíamos chamar punto de vista de Einstein). No entanto, Cartan argumentaba que a maior xeneralidade obteríase separando a métrica da conexión; hai dous xeitos de lograr isto, cunha conexión xeral que se denomina conexión de Palatini \cite{Lovelock_metricformulation,Bernal_2017}, ou, no lugar de traballar sobre a variedade, mediante o estudo do fibrado tanxente, o que se pode chamar punto de vista de Cartan que agora expoñemos.
+\subsection{Álxebra exterior de formas diferencias}
+Antes de falar \textit{per sé} da formulación de Cartan estudaremos uns obxectos previos que se denominan formas diferenciais que son imprescindibles para traballar no fibrado tanxente, de feito unha 1-forma será precisamente o vector dual (ou vector contravariante) dun vector do espazo tanxente $\tpm$, i.e., vive no espazo cotanxente $\cotpm$.
+%\subsubsection{\textit{p}-formas e produto exterior}
+% \subsubsection{Producto \textit{wedge}}
+% \subsubsection{Derivada exterior}
+
+Tomemos un vector $A_j$ dun campo covariante sobre unha variedade diferencial, cun sistema local de coordenadas (base holónoma), para un desprazamento arbitrario de compoñentes $\dd x^j$ podemos escribir a suma
+\begin{align}
+    \omega = A_j\dd x^j
+\end{align}
+que é unha 1-forma\footnote{Estas aparecen en infinidade de situacións da física baixo o nome de pfaffiana aínda que non se tratan xeometricamente, por exemplo nas ecuacións de Gibbs da termodinámica.}, notemos que esta é un escalar que satisfai trivialmente condicións de linearidade. Se no lugar dun vector escollemos un tensor, por exemplo, (1,1), obteríamos unha 1-forma contravariante.\\
+Se agora quixeramos operar entre dúas 1-formas necesitaremos introducir un produto externo da estrutura alxébrica da variedade ao que denominamos produto \textit{wedge} e se denota como $\omega\wedge\pi$ onde $\omega$ e $\pi$ son 1-formas. O seu produto denominarémolo 2-formas (obviamente estas non pertence á variedade) e satisfai as propiedades de asociación e distribución usuais da multiplicación, no entanto este é anticomutativo
+\begin{align}
+    \omega\wedge\pi = -\pi\wedge\omega,\hspace{1.2em}\text{en particular} \hspace{1em} \dd x^j\wedge\dd x^h = - \dd x^h\wedge\dd x^j .
+\end{align}
+Con este produto definido podemos chegar case inmediatamente por indución á definición de p-formas como\footnote{Nesta ecuación poñemos un expoñente na forma para sinalar a súa orde, no sucesivo referirémonos a $\omega$ como unha p-forma e a $\pi$ como unha q-forma sen poñer o superíndice.}
+\begin{align}
+    \omega^p = A\indices{_j_h}\dd x^j\dd x^h\longrightarrow \omega^p = A\indices{_{j_1}_{...}_{j_p}}\dd x^{j_1}\wedge ... \wedge \dd x^{j_p}
+\end{align}
+e por tanto chegamos a probar que a anterior regra anticonmutativa é 
+\begin{align}
+    \omega\wedge\pi = (-1)^{pq}\pi\wedge\omega .
+\end{align}
+O noso estudo limítase ás 1 e 2-formas, no entanto, daremos estos primeiros resultados en xeral para p-formas que son trivialmente particularizados. 
+% podería introducir aquí a construción linear e os conceptos de formas lineares independentes e que unha combinación linear \wedge\omega = 0
+Agora introduciremos a derivada exterior das p-formas que necesitaremos para definir un novo tipo de derivada covariante, que así enunciada de corrido coas súas propiedades esta é
+\begin{align}
+    \Omega\equiv\dd\omega &= \diffp{A\indices{_{j_1}_{...}_{j_p}}}{x^k}\dd x^k\wedge \dd x^{j_1}\overset{\wedge}{...}\ \dd x^{j_p} = (-1)^p\diffp{A\indices{_{j_1}_{...}_{j_p}}}{x^l}\dd x^{j_1}\overset{\wedge}{...}\  \dd x^{j_p}\wedge\dd x^l,\\
+    \dd(\omega +\pi) &= \dd\omega + \dd\pi\hspace{7.21em}\text{(Distributiva respecto da suma)},\\
+    \dd(\omega\wedge\pi) &= \dd\omega\wedge\pi + (-1)^p\omega\wedge \dd\pi\hspace{1.2em}\text{(Distributiva respecto do wedge),}
+\end{align}
+notemos que a derivada dunha p-forma, $\Omega$, é unha (p+1)-forma.\\
+Podemos chegar inmediatamente a un resultado moi importante no análise de formas diferencias mediante a antisimetría da definición (18), que xorde da anticonmutatividade (17), se pretendemos calcular a derivada segunda, atoparemos que esta debe anularse,
+\begin{align}
+    \dd^2\omega = \dd(\dd\omega) = 0,
+\end{align}
+xa que a derivada parcial é conmutativa mentras que as formas elementais non (18), este importantísimo resultado ao que recorreremos multitude veces é coñecido como \textit{lema de Poincaré}. Anecdoticamente, a partir deste pódese chegar ao teorema de Stokes máis xeral do cálculo, $\int_{\partial\mathcal{N}}\omega = \int_\mathcal{N}\dd\omega$.
+
+% Poincaré's Lemma
+% a derivada exterior leva inmediatamente ao teorema de Stokes (comentalo sen máis) 
+
+% 3.2. Integración y dualidad
+% Operador Hodge
+% Integración sobre variedades
+% Teorema de Stokes
+
+\subsection{Formulación dende o fibrado tanxente}
+%\subsubsection{Espazo tanxente sobre a variedade}
+Sexa unha variedade diferencial D-dimensional $\mathcal{M}$, como o noso espazotempo, podemos construír unha aproximación plana inmediata para todo punto $P$ da variedade que denominamos espazo tanxente ($\tpm$), i.e., localmente toda variedade é homeomorfa ao espazo de Minkowski. Ao conxunto de todos os espazo tanxentes denominámolo fibrado tanxente $T\mathcal{M}$. Como para calquer espacio vectorial podemos construír o seu dual que denominamos espazo cotanxente $\cotpm$, así distinguimos entre vectores covariantes e contravariantes como usualmente. O convenio de índices será o seguinte: para representar a base holónoma (a propia da variedade) continuaremos utilizando índices gregos, para a base ortonormal na tanxente usamos índices latinos. 
+
+\subsubsection{Vielbein}
+Para poder escribir toda a relatividade en linguaxe do fibrado tanxente necesitamos poder movernos entre coordenadas locais (holónomas) e as ortonormais do tanxente, este será un isomorfismo da forma $\textbf{e}:\mathcal{M}\longrightarrow T\mathcal{M}$ que coincide coa matriz jacobiana usual. De feito, acción sobre coordenadas separadas infinitesimalmente cífrase por definición como
+\begin{align}
+    \diffp{z^a}{x^\mu}=\viel(x)\Rightarrow dz^a = \viel(x)\dd x^\mu.
+\end{align}
+A familia \{$\viel\ |\ a=1,...,D$\} é o que chamamos \textit{vielbein}. A partir da definición anterior podemos decatarnos inmediatamente dalgunhas propiedades fundamentais deste obxecto como
+\begin{align}
+    \viel e\indices{^\mu_b}= \delta^a_b\ ,\hspace{1.2em} e\indices{^\mu_a} e\indices{^a_\nu} =\delta^\mu_\nu\ ;\hspace{2em} &\text{(ortonormalidade do índice)}\\
+    T\indices{^\mu^\nu}= \vieli T\indices{^a^\nu} = \vieli\bieli T\indices{^a^b}\ ;\hspace{2em} &\text{(transformación entre espazos de tensores)}
+\end{align}
+a transformación de tensores é facilmente xeneralizable para tensores (p,q). Notemos que podemos reescribir a métrica co vielbein, a partir do elemento de arco para o espazo tanxente atopamos que 
+\begin{align}
+    \dd s^2 =\eta\indices{_a_b}\dd z^a\dd z^b = \eta\indices{_a_b}\viel(x)\biel(x)\dd x^\mu\dd x^\nu\Rightarrow g\indices{_\mu_\nu}(x) = \viel(x)\biel(x)\eta\indices{_a_b}. 
+\end{align}
+Posto que o vielbein determina a métrica é intuitivo pensar que todas as propiedades métricas do espazotempo están contidas no vielbein. O contrario non é certo pois pódense construír moitos vielbein que reproduzan a mesma métrica, isto débese a que hai moitas eleccións de bases ortonormais no tanxente, de feito notemos que podemos transformar o vielbein baixo transformacións locais de Lorentz (TLL) ${\mathbf{\Lambda}(x)\in SO(D-1,1)}$ tal que estas pasan desapercibidas para a variedade $\mathcal{M}$ (porque a métrica $g\indices{_\mu_\nu}$ é invariante baixo TLL)
+\begin{align}
+    \viel(x)\longrightarrow e\indices{^{a'}_\mu}(x) = \Lambda\indices{^{a'}_a}(x)\viel(x).
+\end{align}
+Unha consecuencia inmediata disto é que, en xeral, os índices latinos transforman baixo TLL mentres que os índices gregos transforman como a métrica, baixo CXC, i.e., Diff($\mathcal{M}$).
+
+\subsubsection{Conexión de Lorentz}
+    % só será necesario para campos de spin racional, como o de Dirac
+O primeiro problema que debemos solucionar na formulación de Cartan para obter unha teoría equivalente á usual da relatividade é definir un operador diferencial que transforme adecuadamente baixo TLL, que son as que afectan aos obxectos (tensores) que vivan no tanxente: unha derivada covariante. Notemos a simetría do problema para os CXC sobre a variedade. Necesitamos logo un tipo de conexión que se chama conexión de Lorentz ou conexión de spin $\omega\indices{^a_b_\mu}$, así a nosa derivada covariante para un campo $\phi^a(x)$ 
+\begin{align}
+    \mathcal{D}_\mu \phi^a = \partial_\mu\phi^a + \omega\indices{^a_b_\mu}\phi^b.
+\end{align}
+Esta definición require que a conexión transforme como
+\begin{align}
+    \omega\indices{^a_b_\mu}\longrightarrow \omega\indices{^{a'}_{b'}_\mu} = \Lambda\indices{^{a'}_a}\Lambda\indices{_{b'}^b} \omega\indices{^a_b_\mu} + \Lambda\indices{^{a'}_a}\partial_\mu\Lambda\indices{_{b'}^b}.
+\end{align}
+Ao igual que pasaba con $\viel$ e a métrica, as propiedades afíns da variedade están codificadas en $\omega\indices{^a_b_\mu}$ que é independente da métrica, ao igual que cunha conexión xeral de Palatini. Esta conexión de spin é análoga á conexión afín (asimesmo pode definir un transporte paralelo no fibrado), malia ser obxectos independentes por vivir en espazos diferentes, estos poderían ser relacionados polo isomorfismo entre $\mathcal{M}$ e $T\mathcal{M}$, $\viel$.
+
+\paragraph{Vielbein e conexión de spin como 1-formas.}
+% se sobra espazo aquí introduciría un comentario sobre a equivaleencia de vielbein coa conexion afin e a torsion e curvatura usuais para facer un apéndice
+Todas as propiedades xeométricas de $\mathcal{M}$ poden ser expresadas mediante dúas 1-formas xunto cos seus productos e derivadas exteriores. 
+Estas 1-formas necesarias constrúense mediante a supresión da dependencia de coordenadas holónomas, i.e., contraendo o índice grego, das nosas estudadas estruturas do fibrado: o vielbein e a conexión de Lorentz. Logo, as seguintes construccións
+\begin{align}
+    e^a&=\viel\dd x^\mu\\
+    \omega\indices{^a_b} &=\omega\indices{^a_b_\mu}\dd x^\mu 
+\end{align}
+son invariantes baixo CXC, o que se di libre de coordenadas. Por construción todas os produtos e derivadas exteriores tamén o son, de feito a derivada covariante anterior transfórmase no operador derivada covariante exterior para un campo tensorial
+\begin{align}
+    \mathcal{D} = \dd +\omega\indices{^a_b}\wedge
+\end{align}
+onde `$\dd$' representa a derivada exterior.
+\subsubsection{Curvatura e torsión como 2-formas}
+%   Ecuacións de estrutura de Cartan p165\cite{lovelock-1989}
+Outra consecuencia do lema de Poincaré (21) é que o cadrado do operardor (31) non é un operador diferencial, no entanto, si que é un operador alxébrico que é coñecido como a curvatura 2-forma. Desenvolvendo (31) cun campo tensorial auxiliar $\phi^a$
+\begin{align}
+    \hspace{-2em}\nonumber\mathcal{D}^2\phi^a = \mathcal{D}(\mathcal{D}\phi^a) &= \dd(\mathcal{D}\phi^a)+\omega\indices{^a_b}\wedge\mathcal{D}\phi^b = \dd(\dd\phi^a +\omega\indices{^a_b}\wedge\phi^b) + \omega\indices{^a_b}\wedge(\dd\phi^b +\omega\indices{^b_c}\wedge\phi^c)\\
+    \nonumber &= \dd^2\phi^a + \dd\omega\indices{^a_b}\wedge\phi^b - \omega\indices{^a_b}\wedge\dd\phi^b + \omega\indices{^a_b}\wedge\dd\phi^b + \omega\indices{^a_b}\wedge\omega\indices{^b_c}\wedge\phi^c\\
+     &= \dd\omega\indices{^a_c}\wedge\phi^c + \omega\indices{^a_b}\wedge\omega\indices{^b_c}\wedge\phi^c = (\dd\omega\indices{^a_c} + \omega\indices{^a_b}\wedge\omega\indices{^b_c})\wedge\phi^c \equiv \mathcal{R}\indices{^a_b}\wedge\phi^b.
+\end{align}
+A expresión (32) define un tensor (1,1) no fibrado tanxente que é unha 2-forma, esta tamén recibe o nome de \textit{primeira ecuación de estrutura de Cartan}. Esta curvatura pódese relacionar directamente co tensor de Riemann usual (6) cunha serie de asuncións que non explicaremos aquí, %(véxase o apéndice A)
+(véxase \cite{lovelock-1989,EinsteinsVielben,clave} para unha explicación pormenorizada)
+tal que
+\begin{align}
+    \mathcal{R}\indices{^a_b} = \dd\omega\indices{^a_b} + \omega\indices{^a_l}\wedge\omega\indices{^l_b} = \frac{1}{2}\viel\bieli R\indices{^\mu_\nu_\rho_\sigma}\dd x^\rho\wedge\dd x^\sigma = \eta\indices{^a^c}e\indices{^\mu_c}\bieli R\indices{_\mu_\nu}.
+\end{align}
+A outra 2-forma que construímos a partir das nosas 1-formas é empregando a derivada exterior covariante da 1-forma (29) 
+\begin{align}
+    \mathcal{T}^a = \dd e^a + \omega\indices{^a_b}\wedge e^b
+\end{align}
+que é un tensor (1,0) no fibrado tanxente que é a 2-forma da torsión, esta tamén recibe o nome de \textit{segunda ecuación de estrutura de Cartan}. Ao igual que antes, esta 2-forma de torsión podemos relacionala co tensor de torsión usual (5) tal que
+\begin{align}
+    \mathcal{T}\indices{^a} =\dd e^a + \omega\indices{^a_b}\wedge e^b = \frac{1}{2}\viel T\indices{^\mu_\rho_\sigma}\dd x^\rho\wedge\dd x^\sigma.
+\end{align}
+A partir destas 2-formas poderíamos pensar en seguir construíndo formas de maior orde mediante a derivada covariante exterior, no entanto de aplicala sobre (32) e (34) obteríamos
+\begin{align}
+    \mathcal{D}\mathcal{R}\indices{^a_b} =\dd \mathcal{R}\indices{^a_b}  + \omega\indices{^a_c}\wedge\mathcal{R}\indices{^c_b} - \omega\indices{^c_b}\wedge\mathcal{R}\indices{^a_c} \\
+    \mathcal{D}\mathcal{T}\indices{^a} = \dd\mathcal{T}\indices{^a} + \omega\indices{^a_b}\wedge T^b = \mathcal{R}\indices{^a_b}\wedge e^b
+\end{align}
+é dicir, non podemos construír máis estructuras non triviais no formalismo de Cartan. As expresións (36) e (37) reciben o nome de \textit{identidades de Bianchi} e \textit{identidade cíclica} para a tanxente, respectivamente. A proba é trivial, véxase, p.ex.,
+\cite{lovelock-1989}.
+% 3.4. Ecuaciones de Cartan
+% Primera ecuación estructural
+% Segunda ecuación estructural
+
+
+\section{Dinámica lagranxiana na relatividade xeral}
+Unha das ferramentas máis poderosas e elegantes da física son, sen lugar a dúbida, os principios variacionais. A partir dun funcional de acción adecuado pódese establecer un principio de mínima acción do mesmo que nos permita recuperar toda a dinámica asociada a esta, no caso dunha acción derivada por unha lagranxiana dispomos das ecuacións de Euler-Lagrange coas que, en principio, deberíamos recuperar as ecuacións dos campos asociados á lagranxiana, en xeral
+\begin{align}
+    \delta\mathcal{S} = 0=\delta\int\mathcal{L}(q,\dot q)\sqrt{\abs g}\dd^D x\Rightarrow \diffp {\sqrt{\abs g}\mathcal L}{q}-\diff*{\diffp{\sqrt{\abs g}\mathcal L}{\dot{q}}[]}\tau = 0
+\end{align}
+Para o caso da relatividade xeral usual, a acción que podemos enunciar é a acción de Einstein-Hilbert (1) coa que recuperamos as ecuacións de Einstein no baleiro, no entanto, para recuperar o caso con materia basta con asociarlle unha lagranxiana material do tipo $\mathcal{L}_{\text{grav}}(\chi,g,\Gamma)$\footnote{Sobreentenderase que as lagranxianas dependen tamén das primeiras derivadas.} onde $\chi$ refire ao campo físico preciso, probaremos esta equivalencia no seguinte apartado. Se asumimos que a gravidade vén completamente determinada polas propiedades xeométricas da variedade a lagranxiana máis xeral que podemos enunciar é $\mathcal{L}_{\text{grav}}(g,\Gamma)$, obviamente este é o caso para (1), pero esta non é a máis xeral, as lagranxianas máis xerais serán as de Lovelock.
+
+\subsection{Formalismo métrico}
+O formalismo métrico, ou de segunda orde, é o que se corresponde co punto de vista de Einstein polo que asume que a conexión lexítima é a de Levi-Civita (12). Isto quere dicir, como xa vimos, que a nosa gravidade estará completamente determinada por tan só a métrica e as súas derivadas primeiras e segundas\footnote{Coidemos que as lagranxianas, en xeral, escríbense só coas primeiras derivadas, no entanto, como a conexión $\breve\Gamma\sim\partial g$ a súa derivada $\partial\breve\Gamma\sim\partial^2 g$.} e ademais será libre de torsión. 
+Probemos agora polo principio de mínima acción que podemos reconstruír as ecuacións de Einstein variando a métrica\footnote{Asumiremos que $\delta\breve R\indices{_\mu_\nu} = 0$, véxase a demostración en \cite{clave}}.
+  
+\begin{align}
+    \hspace{-3em}\nonumber\mathcal{S}=\mathcal{S}_{EH} + \mathcal{S}_{\text{material}} = \int\dd^D x \sqrt{\abs g} \left[ \frac{1}{2\kappa}\breve R +\mathcal{L}_{\text{material}}(\chi, g)\right] = \int\dd^D x \sqrt{\abs g} \left[ \frac{1}{2\kappa}g\indices{^\mu^\nu}
+    \breve R\indices{_\mu_\nu} +\mathcal{L}_{\text{material}}(\chi, g)\right]
+\end{align}
+\begin{align*}
+    \delta\mathcal{S} = 0 &= \int\dd^D x  \left[ \frac{1}{2\kappa}\delta\left(\sqrt{\abs g}g\indices{^\mu^\nu}
+    \breve R\indices{_\mu_\nu}\right) + \delta\left(\sqrt{\abs g}\mathcal{L}_{\text{material}}(\chi, g)\right)\right]\\
+    &= \int\dd^D x \left[ \frac{1}{2\kappa}\diffp{\sqrt{\abs g}g\indices{^\rho^\sigma}}{g\indices{^\mu^\nu}}\breve R\indices{_\rho_\sigma} + \diffp{\sqrt{\abs g}\mathcal{L}_{\text{mat}}}{g\indices{^\mu^\nu}}
+    \right]\delta g\indices{^\mu^\nu} +\frac{1}{2\kappa}
+    \sqrt{\abs g}g\indices{^\rho^\sigma}\delta\breve R\indices{_\rho_\sigma}\\
+    &\hspace{1em}\Rightarrow \frac{1}{2\kappa}\diffp{\sqrt{\abs g}g\indices{^\rho^\sigma}}{g\indices{^\mu^\nu}}\breve R\indices{_\rho_\sigma} + \diffp{\sqrt{\abs g}\mathcal{L}_{\text{mat}}}{g\indices{^\mu^\nu}} = 0
+\end{align*}
+\begin{align*}
+    \diffp{\sqrt{\abs g}g\indices{^\rho^\sigma}}{g\indices{^\mu^\nu}} &= \diffp{\sqrt{\abs g}}{g\indices{^\mu^\nu}}g\indices{^\rho^\sigma} + \sqrt{\abs g}\diffp{g\indices{^\rho^\sigma}}{g\indices{^\mu^\nu}} =  -\frac{1}{2}\sqrt{\abs g}g\indices{_\mu_\nu}g\indices{^\rho^\sigma} + \frac{1}{2}\sqrt{\abs g}(\delta^\rho_\mu\delta^\sigma_\nu + \delta^\rho_\nu\delta^\sigma_\mu)\\
+    \diffp{\sqrt{\abs g}\mathcal{L}_{\text{mat}}}{g\indices{^\mu^\nu}} &=
+    \sqrt{\abs g}\diffp{\mathcal{L}_{\text{mat}}}{g\indices{^\mu^\nu}} +  \diffp{\sqrt{\abs g}}{g\indices{^\mu^\nu}}\mathcal{L}_{\text{mat}}\\
+    &= \sqrt{\abs g}\diffp{\mathcal{L}_{\text{mat}}}{g\indices{^\mu^\nu}} -\frac{1}{2}\sqrt{\abs g}{g\indices{_\mu_\nu}}\mathcal{L}_{\text{mat}} \equiv \frac{\sqrt{\abs g}}2 T\indices{_\mu_\nu}
+\end{align*}
+\begin{gather}
+    \nonumber\left(\frac{1}{2}\sqrt{\abs g}(\delta^\rho_\mu\delta^\sigma_\nu + \delta^\rho_\nu\delta^\sigma_\mu) -\frac{1}{2}\sqrt{\abs g}g\indices{_\mu_\nu}g\indices{^\rho^\sigma}\right)\breve R\indices{_\rho_\sigma} =
+    -\kappa\sqrt{\abs g} T\indices{_\mu_\nu}\\
+    \breve G\indices{_\mu_\nu}\equiv\breve R\indices{_\rho_\sigma} -\frac{1}{2}g\indices{_\mu_\nu}\breve R = -8\pi T\indices{_\mu_\nu}
+\end{gather}
+onde $T\indices{_\mu_\nu}$ é o tensor enerxía-momento. A expresión (39) son as ecuacións de Einstein da relatividade xeral que notemos que están escritas en función da conexión de Levi-Civita, isto pódese xeneralizar a calquera conexión como comentaremos. No sucesivo suprimiremos a lagranxiana material por simplicidade.
+
+\subsection{Formalismos de primeira orde} 
+O formalismo de primeira orde pode ser enunciado de dúas formas, por unha banda está o formalismo que chamaremos \textit{de Cartan}, expresado mediante o vielbein; e pola outra está o formalismo de Palatini, que é a xeneralización do anterior pero considerando calquera conexión compatible coa métrica da forma que se sinala en (13). Esta segunda enunciación, que semella máis intuitiva vendo a forma anterior, leva aos mesmos resultados que se traballamos dende o fibrado tanxente; o formalismo de Palatini ten varias vantaxes como a inclusión natural da torsión ou unha ``doada'' xeneralización a $D>4$, o que quere dicir que a teorías de Lovelock son enunciables no formalismo de Palatini \cite{Lovelock_metricformulation}. Tamén se poderían demostrar os seguintes resultados\footnote{Non poñer ningún acento sobre os tensores supón que están construídos coa conexión de Palatini.}, remitimos a \cite{clave,Bernal_2017} para un estudo exaustivo,
+\begin{align}
+    G\indices{_\mu_\nu} &= R\indices{_{(\mu}_{\nu)}}-\frac{1}{2}R = -8\pi T\indices{_\mu_\nu}\hspace{2em}\text{Ecuacións de campo de Einstein-Palatini}\\
+    R\indices{_{(\mu}_{\nu)}} &= \breve R\indices{_{\mu}_{\nu}}\ \Rightarrow\ R = \breve R \ \Rightarrow\ G\indices{_{\mu}_{\nu}} = \breve G\indices{_{\mu}_{\nu}}\\
+    \Gamma\indices{^\mu_\alpha_\beta}& = \breve\Gamma\indices{^\mu_\alpha_\beta} -\frac{1}{D-1}\delta\indices{^\mu_\beta}T\indices{^\sigma_\sigma_\alpha}
+    \hspace{2.206em}\text{Ecuación da conexión de Palatini}
+\end{align}
+e ademais, a nivel de traxectorias, as xeodésicas críticas e autoparalelas coinciden para calquera conexión de Palatini e incluso para dúas conexións distintas as traxectorias están relacionadas mediante un mero cambio de coordenadas, o que supón que as conexións de Palatini portan unha certa simetría física. Supúxose que a conexión de Palatini é compatible coa métrica ($g\indices{_\mu_\nu_{;\lambda}} = 0$), que para este caso é trivial recuperar o formalismo métrico mediante estes resultados.\\
+
+Na sección anterior desenrolouse e probouse que do que se pode falar dende a linguaxe da variedade tamén pode ser expresado en linguaxe da tanxente. Deste xeito, é intuitivo pensar que a lagranxiana gravitatoria podése escribir en función do vielbein e da conexión de spin 
+e ademais calquera formalismo lagranxiano escrito en 1-formas sempre é de primeira orde (non pode existir dependencia en derivadas superiores polo lema de Poincaré). Así, escribimos a acción de Einstein-Hilbert en 4D
+\begin{align}
+    \mathcal{S} = \int\varepsilon\indices{_a_b_c_d}(\alpha\mathcal{R}\indices{^a^b}e^ce^d + \beta e^ae^be^ce^d)
+\end{align}
+onde se suprimiron (e de aquí en adiante) os produtos wedge e o elemento $\varepsilon$ é o pseudotensor completamente antisimétrico de Levi-Civita, que é un pseudotensor invariante ($\dd\varepsilon=0$) \cite{CH_supergravities}. Se deducimos a ecuación de campo dende esta acción chegaríamos a unha ecuación de campo que só se correspondería ca anterior de Palatini se aplicamos uns postulados que se denominan postulado do vielbein e postulado de metricididade \cite{EinsteinsVielben}.
+
+\section{Teorías de Lovelock}
+A xeneralización natural a outras dimensións da acción de Einstein-Hilbert son as teorías de Lovelock, obxectivo final desta presentación, agora ben, estas non son tampouco as teorías máis xerais da relatividade. Como veremos, o teorema de Lovelock asume unha restrición bastante importante: o espazotempo é unha variedade libre de torsión. Unha teoría moito máis xeral sería considerar a torsión na nosa lagranxiana, isto sería un verdadeiro quebracabezas, tendo que traballar dende a formulación de Palatini \cite{Lovelock_metricformulation}, e requiriríamos de introducir as formas de Chern-Simmons \cite{CH_supergravities,Zanelli_2012} que escapa por moito as capacidades deste texto. 
+
+\pagestyle{apaño1}
+\subsection{Teorema de Lovelock}
+% Enunciado do teorema
+% Condiciones sobre as ecuacións do movemento
+% Orden diferencial e conservación
+Antes de enunciar o teorema, xa dixemos que se considera $\mathcal{T}^a=0$, polo que, se a conexión de lorentz non é independente do vielbein, teremos que $\omega\indices{^a^b}=\omega(e,\partial e)$. Logo, polo teorema de Poincaré, non poderá ser posible que aparezan derivadas superiores do vielbein contraído. A lagranxiana de Lovelock será do tipo $\mathcal{L}(\omega(e,\partial e),e)$ e, baixo a definición da curvatura 2-forma (33), podemos reescribila como $\mathcal{L}(\mathcal{R},e)$; por certa xeneralidade preferimos empregar $\mathcal{L}(\omega,e)$. Agora si, o teorema de Lovelock formulado entre 1970 e 1971 \cite{Lovelock-1970,Lovelock-1971} nunha enunciación compacta reza
+\begin{adjustwidth}{1cm}{0.8cm}\vspace{0.4em}
+    \textit{En ausencia de torsión, a acción máis xeral para a gravidade $\mathcal{S}(e,\omega)$ en D dimensións invariante baixo TLL é da forma}
+\end{adjustwidth}
+\begin{align}
+    \mathcal{S}_D(e,\omega) = \kappa\int_\mathcal{M}\sum_{p=0}^{[D/2]}a_p\mathcal{L}_p^D
+\end{align}
+\begin{adjustwidth}{1cm}{0.8cm}
+    \textit{onde $a_p$ é unha constante arbitraria e a lagranxiana vén descrita por}
+\end{adjustwidth}
+\begin{align}
+    \mathcal{L}_p^D = \varepsilon_{a_1...a_D}\mathcal{R}\indices{^{a_1}^{a_2}}...\mathcal{R}\indices{^{a_{2p-1}}^{a_{2p}}}e\indices{^{a_{2p+1}}}...e\indices{^{a_D}}.
+\end{align}
+Coa definición dunha acción está claro o que temos que facer para desentrañar toda a súa información dinámica: aplicar o principio variacional. Se extremalizamos respecto de $e^a$ e $\omega\indices{^a^b}$ (44) temos unha expresión compacta da forma
+\begin{align}
+    \delta\mathcal{S}_D = \int\left(\delta e^a\mathcal{E}_a + \delta\omega\indices{^a^b}\mathcal{E}\indices{_a_b} \right) = 0
+\end{align}
+onde está claro que os termos $\mathcal{E}_a$ e 
+$\mathcal{E}\indices{_a_b}$ débense anular simultaneamente para satisfacer que $\delta\mathcal{S}_D = 0$. Se fixeramos os cálculos varacionais con calma, semellante a como fixemos na sección 4.1., chegaríamos ás seguintes expresión para os termos $\mathcal{E}$
+\begin{align}
+    \mathcal{E}_a = \sum_{p=0}^{\left[\frac{D-1}{2}\right]}a^{(p)}(D-2p)\mathcal{E}_a^{(p)} = 0\ ;\\
+    \mathcal{E}\indices{_a_b} = \sum_{p=1}^{\left[\frac{D-1}{2}\right]}a^{(p)}p(D-2p)\mathcal{E}_{ab}^{(p)} = 0
+\end{align}
+onde
+\begin{align}
+    \mathcal{E}_{a}^{(p)} &:=\ \varepsilon_{ac_1...c_{D-1}}\mathcal{R}\indices{^{c_1}^{c_2}}...\mathcal{R}\indices{^{c_{2p-1}}^{c_{2p}}}e\indices{^{c_{2p+1}}}...e\indices{^{c_{D-1}}}\ ;\\
+    \mathcal{E}_{ab}^{(p)} &:=\ \varepsilon_{abc_1...c_{D-2}}\mathcal{R}\indices{^{c_1}^{c_2}}...\mathcal{R}\indices{^{c_{2p-3}}^{c_{2p-2}}}\mathcal{T}^{c_{2p-1}}e\indices{^{c_{2p}}}...e\indices{^{c_{D-2}}}.
+\end{align}
+A expresión (48) é trivialmente verificada xa que, por condicións do teorema de Lovelock, a torsión é nula, logo, o termo definido en (50) sempre se anula por ter un termo de torsión. Para (47) isto non pasa e teríamos que tratar cada caso concreto, no entanto, ambas condicións son polinomios de $\mathcal{R}_{ab}$ así que poderíamos atopar algunha combinación concreta baixo a que tanto (47) como (48) se anulen sen impoñer restricións sobre a torsión. Este resultado válenos para construír as ecuacións dinámicas $\forall \mathcal{S}_D$ de Lovelock.
+
+% \subsection{Construción de invariantes de Lovelock}
+% \textbf{DEBO CONSTRUÍR AS TEORÍAS EU}
+% Densidades de Euler
+% Polinomios de curvatura
+% \subsection{Acción xeral de Lovelock}
+%     expresión en D dimensións
+%     coeficientes de acoplamento
+
+\subsection{Acción de Lovelock en 2, 4 e 5 dimensións}
+    % Termo cosmolóxico // métricas de de Sitter
+    % Einstein–Hilbert
+    % Lanczos-Gauss–Bonnet
+    % Términos de orden superior
+Rematamos o noso estudo afondando un pouco no cálculo concreto dalgunhas accións de Lovelock. Propoñerémonos calcular $\mathcal{S}_2$, $\mathcal{S}_3$, $\mathcal{S}_4$ e $\mathcal{S}_5$ en vista do teorema de Lovelock e as expresións (44) e (45). %D=2 (trivial) D=4 (EH + termo cosmolóxico) D=5 (gauss-bonnet coa respectiva ecuación de campo)
+\paragraph{D=1+1.} O cálculo desta acción é inmediato, ten só dous termos, un relativo ao D-volume,$\int_\mathcal{M}\sqrt{\abs g}\dd^Dx$ do espazo e outro á curvatura
+\begin{gather}
+    \mathcal{L}_0^2 = \varepsilon_{ab}e^ae^b\hspace{1.5em}\text{e}\hspace{1.5em}\mathcal{L}_1^2 = \varepsilon_{ab}R^{ab}
+\end{gather}\vspace{-2.5em}
+\begin{align}
+    \mathcal{S}_2 &= \kappa\int_\mathcal{M}\varepsilon_{ab}\left(
+    a_1\mathcal{R}^{ab}+a_0e^ae^b
+    \right)\\
+    &= \kappa\int_\mathcal{M}\varepsilon_{ab}\left(
+    \frac{a_1}2 \viel\biel R\indices{^\mu^\nu_{\rho\sigma}}\dd x^\rho\dd x^\sigma + a_0\viel\biel\dd x^\mu\dd x^\nu
+    \right)\\
+    &=\kappa\int_\mathcal{M}\sqrt{\abs g}\left(
+    a_1R+2a_0
+    \right)\dd^2x
+\end{align}
+Este caso non ten unha dinámica moi interesante, porén fixemos os cálculos un pouco máis exhaustivos; será o proceder que aplicaremos en xeral. Coidemos que basta con xogar cos índices introducindo a métrica para contraer o tensor de Riemann ao escalar de curvatura, ademais empregouse $\varepsilon_{a_1...a_D}e\indices{^{a_1}_{\mu_1}}...e\indices{^{a_D}_{\mu_D}}\dd x^{\mu_1}...\dd x^{\mu_D} = D!\sqrt{\abs g}\dd^Dx$. Coidemos que o termo cosmolóxico aparece $\forall D$ e correspóndese co termo $p=0$.
+\vspace{-0.5em}
+\paragraph{D=2+1 e D=3+1.} Aquí a acción redúcese á acción de Einstein-Hilbert cun termo D-volume engadido que coincidirá coa constante cosmolóxica. O caso $D=3$ é farto interesante (\cite{2+1grav0,2+1grav1}) e para $D=4$, que é a nosa gravidade usual, temos 
+\begin{align}
+    \mathcal{S}_4 &= \kappa\int_\mathcal{M}\varepsilon_{abcd}\left(
+    a_2\mathcal{R}^{ab}\mathcal{R}^{cd} + a_1\mathcal{R}^{ab}e^ce^d + a_0e^ae^be^ce^d
+    \right)\\ 
+    &=\kappa\int_\mathcal{M}\sqrt{\abs g}\left[
+    a_2\left( R^{\alpha\beta\gamma\delta}R_{\alpha\beta\gamma\delta} - 4R^{\alpha\beta}R_{\alpha\beta} + R^2 \right) + 2a_1R
+    \right]\dd^4x + 24\kappa a_0\underbrace{\int_\mathcal{M}\sqrt{\abs g}\dd^4x}_{V_4}.
+\end{align}
+O termo que acompaña ao coeficiente $a_2$ é coñecido como densidade de Gauss-Bonnet-Lanczos (GBL), proporciona a primeira corrección non trivial a $\mathcal{S}_5$. En $D=4$ este termo non é relevante, é só topolóxico: non contribúe na dinámica \cite{Zanelli_2012}. Logo, a dinámica neste caso é a usual ecuación de campo de Einstein con termo cosmolóxico. 
+
+\paragraph{D=5. Gravidade de Einstein-Gauss-Bonnet (EGB).}
+%Un estudo pormenorizado do que sacamos os seguintes resultados é  \cite{Gauss_Bonnet_2022}, así metemos (1), dicimos que podemos recuperar EH con tal, e logo que tal termo é a cte cosmoloxica e escribimos (3), logo, facendo uso das ecuacións (47) e (48) podemos dar as ecuacións de campo (6) (7), aparece a primeira ecuación de campo con torsión non trivial, no entanto o teorema de lovelock fai que sexa cero. algun comentario chulo e xa
+A gravidade EGB é un campo bastante activo actualmente e non imos afondar moito, para unha disertación máis pormenorizada \cite{Gauss_Bonnet_2022}. A primeira corrección que aparece é o termo GBL, así se desenrolamos a expresión (44) para $D=5$ teríamos a seguinte acción
+\begin{align}
+    \mathcal{S}_5 &= \kappa\int_\mathcal{M}\varepsilon_{abcdf}\left(
+    a_2\mathcal{R}^{ab}\mathcal{R}^{cd}e^f + a_1\mathcal{R}^{ab}e^ce^d e^f + a_0e^ae^be^ce^de^f
+    \right)\\
+    &=\kappa\int_\mathcal{M}\sqrt{\abs g}\left[
+    \alpha (GBL) + 4R - 8\Lambda_{5}
+    \right]\dd^5x 
+\end{align}
+na que escollemos as constantes $a_1,a_0$ baixo unhas certas asuncións \cite{Gauss_Bonnet_2022}. Como para calquera outro caso aparece naturalmente o termo cosmolóxico, ademais notemos a equivalencia desta acción coa usual acción de Einstein-Hilbert (1) con tan só escoller $\alpha=0$. Logo, se queremos estudar a dinámica desta teoría da gravidade basta aplicar (47) e (48) coma en calquera outra acción e teríamos as ecuacións de campo
+\begin{align}
+    \varepsilon_{abcdf}\left(
+    \alpha\mathcal{R}^{bc}\mathcal{R}^{df} + 2\mathcal{R}^{bc}e^d e^f - \frac{\Lambda_5}{3}e^be^ce^de^f
+    \right) & = 0,\\
+    \varepsilon_{abcdf}\left(
+    2\alpha\mathcal{R}^{cd}\mathcal{T}^c + 2\mathcal{T}^c e^de^f
+    \right) & = 0.
+\end{align}
+A ecuación (60) deixa explícita a torsión (algo que non atopabamos na formulación máis clásica), no entanto, o teorema de Lovelock esixe que a acción sexa libre torsión, porén (60) é trivial con $\mathcal{T}^a=0$. A ecuación (59) sería a correspondente ecuación de campo de Einstein para $5D$ con constante cosmolóxica e a corrección Gauss-Bonnet-Lanczos.
+% Además, como lo demuestra
+% el problema aún sin resolver de la constante cosmológica, no existe ningún argumento teórico
+% que permita predecir sus valores mediante argumentos naturales de una manera que pueda compararse con
+% las observaciones
+
+En todo este desenrolo poderíamos ter incluído unha acción material como na sección 4.1. e teríamos que as ecuacións dinámicas (47) e (48) serían igualadas a $\sim T_{\mu\nu}$ e non a cero (o baleiro).
+\pagestyle{apaño2}
+\section{Conclusión}
+No presente traballo presentouse unha detallada descrición matemática, tanto da xeometría riemanniana como do fibrado tanxente, que nos levaría a construír unha extensión natural da relatividade xeral en dimensións arbitrarias. 
+
+Esta xeneralización é posible ao presentado teorema de Lovelock coa que construír accións do tipo (44), aínda que estas non son as teorías de gravidade máis xerais, pois son libres de torsión.
+Os distintos termos de Lovelock constrúense como combinacións polinómicas da curvatura e inclúen como caso particular a acción de Einstein–Hilbert o que asegura certa consistencia.
+Finalmente, observouse que en catro dimensións a teoría redúcese esencialmente á relatividade xeral, mentres que para dimensións superiores aparecen novas contribucións dinámicas como a densidade GBL.
